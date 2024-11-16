@@ -9,7 +9,6 @@ const Header: React.FC = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [scroll, setScroll] = useState(false);
 
-    // what is this bro
 
     useEffect(() => {
         const handleScroll = () => {
