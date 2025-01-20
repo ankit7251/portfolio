@@ -8,40 +8,29 @@ const Header: React.FC = () => {
     const [scrollingDown, setScrollingDown] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [scroll, setScroll] = useState(false);
-
-
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
             if (currentScrollY > scrollPosition) {
-                setScrollingDown(!true); 
+                setScrollingDown(!true);
             } else {
-                setScrollingDown(!false); 
+                setScrollingDown(!false);
             }
-
             setScrollPosition(currentScrollY);
-
             if (currentScrollY > 100) {
-                setScroll(true); 
+                setScroll(true);
             } else {
-                setScroll(false); 
+                setScroll(false);
             }
         };
-
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [scrollPosition]);
-
-    const positionStyle = scrollingDown ? { position: 'fixed' } : null;
-
     return (
-        <div 
-            className={`flex items-center justify-between px-4 z-20 md:px-14 py-2 border-b-[0.1rem] border-baseGray w-[100%] ${scroll ? 'bg-black' : ''}`}
-            style={positionStyle} 
+        <div
+            className={`flex items-center justify-between px-4 z-20 md:px-14 py-2 border-b-[0.1rem] border-baseGray w-[100%] ${scroll ? 'bg-black' : ''} ${scrollingDown ? 'fixed' : ''}`}
         >
             <Image
                 src={logo}
@@ -54,7 +43,6 @@ const Header: React.FC = () => {
                         HOME
                     </Link>
                 </li>
-
                 <li className='cursor-pointer md:text-[1.2vw] hover:text-baseColor text-[1.6vh]'>
                     <Link href="/#about">
                         ABOUT US

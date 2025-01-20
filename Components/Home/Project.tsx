@@ -5,6 +5,126 @@ import ecomProduct from '@/Assets/images/ecomProduct.png'
 import ecomCart from '@/Assets/images/ecomCart.png'
 
 const Project: React.FC = () => {
+
+    const projectData = [
+        {
+            title: "Technologies Used",
+            content: {
+                list: [
+                    {
+                        name: "React.js",
+                        title: "For building dynamic and responsive user interfaces."
+                    },
+                    {
+                        name: "Redux",
+                        title: "For state management and ensuring a smooth user experience."
+                    },
+                    {
+                        name: "RESTful API",
+                        title: "For fetching product data and managing cart operations."
+                    },
+                    {
+                        name: " CSS/SCSS",
+                        title: "For styling and ensuring responsiveness."
+                    },
+                ]
+            }
+        },
+        {
+            title: "Features",
+            content: {
+                list: [
+                    {
+                        name: "User Interface",
+                        title: "Modern, responsive design with detailed product pages and user-friendly navigation."
+                    },
+                    {
+                        name: "Cart Management",
+                        title: "Add, remove, and update items in the cart with real-time updates and persistent state."
+                    },
+                    {
+                        name: "API Integration",
+                        title: "Add, remove, and update items in the cart with real-time updates and persistent state.."
+                    },
+                    {
+                        name: "Product Management",
+                        title: "Product categories and sorting options for enhanced user experience."
+                    },
+                ]
+            }
+        },
+        {
+            title: "Challenges Faced",
+            content: {
+                list: [
+                    {
+                        name: "State Management",
+                        title: " Implementing Redux for global state management was a complex task."
+                    },
+                    {
+                        name: "API Integration",
+                        title: " Integrating with a RESTful API for fetching product data and managing cart operations was a challenge."
+                    },
+                    {
+                        name: "Responsive Design",
+                        title: " Ensuring a responsive design for various screen sizes was a challenge."
+                    },
+                    {
+                        name: "Performance Optimization",
+                        title: "Optimizing load times and performance was crucial for a smooth user experience."
+                    },
+                ]
+            }
+        },
+        {
+            title: "Learning Outcomes",
+            content: {
+                list: [
+                    {
+                        name: "Advanced React.js Skills",
+                        title: " Gained proficiency in building complex components and managing state."
+                    },
+                    {
+                        name: "API Integration",
+                        title: " Developed hands-on experience with RESTful APIs."
+                    },
+                    {
+                        name: "Responsive Design",
+                        title: " Enhanced understanding of responsive web design principles."
+                    },
+                    {
+                        name: "Performance Optimization",
+                        title: "Learned techniques for improving front-end performance."
+                    },
+                ]
+            }
+        },
+
+        {
+            title: "Future Enhancements",
+            content: {
+                list: [
+                    {
+                        name: "Enhanced Features",
+                        title: "User authentication, personalized shopping, and advanced product recommendations."
+                    },
+                    {
+                        name: "UI/UX Improvements",
+                        title: " Interactive elements and refinements based on user feedback."
+                    },
+                    {
+                        name: "Performance and Scalability",
+                        title: "Improvements to handle increased traffic and data loads."
+                    },
+                    {
+                        name: "Additional Functionality",
+                        title: "Integration of additional payment options and product reviews."
+                    },
+                ]
+            }
+        },
+
+    ]
     return (
         <div className='py-8 px-4 md:px-14 ' id='project'>
             <h1 className='md:text-4xl font-bold  text-baseColor mb-8'><u>E-Commerce Website</u></h1>
@@ -15,57 +135,20 @@ const Project: React.FC = () => {
                     This e-commerce website is a robust front-end application developed using React.js. It offers users a seamless shopping experience with features like product browsing, cart management, and real-time data updates through API integration.
                 </p>
             </section>
-
-            <section className='mb-12'>
-                <h2 className='text-3xl font-semibold text-baseColor mb-4'>Technologies Used</h2>
-                <ul className=' list-inside text-lg text-baseWhite list-none'>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>React.js</strong>: For building dynamic and responsive user interfaces.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Redux</strong>: For state management and ensuring a smooth user experience.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>RESTful API</strong>: For fetching product data and managing cart operations.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>CSS/SCSS</strong>: For styling and ensuring responsiveness.</li>
-                </ul>
-            </section>
-
-            <section className='mb-12'>
-                <h2 className='text-3xl font-semibold text-baseColor mb-4'>Features</h2>
-                <ul className=' list-inside text-lg text-baseWhite list-none'>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>User Interface</strong>: Modern, responsive design with detailed product pages and user-friendly navigation.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Cart Management</strong>: Add, remove, and update items in the cart with real-time updates and persistent state.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>API Integration</strong>: Dynamic data fetching from RESTful API and real-time synchronization of product data.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Product Management</strong>: Product categories and sorting options for enhanced user experience.</li>
-                </ul>
-            </section>
-
-            <section className='mb-12'>
-                <h2 className='text-3xl font-semibold text-baseColor mb-4'>Challenges Faced</h2>
-                <ul className=' list-inside text-lg text-baseWhite list-none'>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>State Management</strong>: Implementing Redux for global state management was a complex task.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>API Integration</strong>: Handling asynchronous data fetching and error management required careful implementation.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Responsive Design</strong>: Ensuring consistency across various devices involved extensive testing.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Performance Optimization</strong>: Optimizing load times and performance was crucial for a smooth user experience.</li>
-                </ul>
-            </section>
-
-            <section className='mb-12'>
-                <h2 className='text-3xl font-semibold text-baseColor mb-4'>Learning Outcomes</h2>
-                <ul className=' list-inside text-lg text-baseWhite list-none'>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Advanced React.js Skills</strong>: Gained proficiency in building complex components and managing state.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>API Integration</strong>: Developed hands-on experience with RESTful APIs.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Responsive Design</strong>: Enhanced understanding of responsive web design principles.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Performance Optimization</strong>: Learned techniques for improving front-end performance.</li>
-                </ul>
-            </section>
-
-            <section className='mb-12'>
-                <h2 className='text-3xl font-semibold text-baseColor mb-4'>Future Enhancements</h2>
-                <ul className=' list-inside text-lg text-baseWhite list-none'>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Enhanced Features</strong>: User authentication, personalized shopping, and advanced product recommendations.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>UI/UX Improvements</strong>: Interactive elements and refinements based on user feedback.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Performance and Scalability</strong>: Improvements to handle increased traffic and data loads.</li>
-                    <li className='md:text-[1.3vw] text-baseGray'><strong className='text-baseWhite'>Additional Functionality</strong>: Integration of additional payment options and product reviews.</li>
-                </ul>
-            </section>
-
+            {
+                projectData.map((item, index) => (
+                    <section key={index} className='mb-12'>
+                        <h2 className='text-3xl font-semibold text-baseColor mb-4'>{item.title}</h2>
+                        <ul className=' list-inside text-lg text-baseWhite list-none'>
+                            {item.content.list.map((subitem, subindex) => (
+                                <li key={subindex} className='md:text-[1.3vw] text-baseGray'>
+                                    <strong className='text-baseWhite'>{subitem.name}</strong>: {subitem.title}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                ))
+            }
             <section className='mb-12'>
                 <h2 className='text-3xl font-semibold text-baseColor mb-4'>Images</h2>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
@@ -80,7 +163,6 @@ const Project: React.FC = () => {
                     </div>
                 </div>
             </section>
-
             <section className='text-center'>
                 <p className='text-lg text-baseWhite mb-4'>
                     Currently, this is the only project listed. Stay tuned for more exciting projects coming soon!
