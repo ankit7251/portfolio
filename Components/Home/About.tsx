@@ -8,10 +8,10 @@ import fron_end from "@/Assets/images/Front-End.webp"
 import continueimg from "@/Assets/images/continue.webp"
 import { Fade } from 'react-awesome-reveal';
 
-
 const About: React.FC = () => {
     return (
         <div className=' md:w-[full] py-4 px-4 md:px-14' id='about'>
+
             <h1 className='md:text-[3vw] font-bold text-center text-baseColor overflow-hidden text-[7vw]'><u><Fade>ABOUT US</Fade></u></h1>
             <div className="md:flex md:h-[50vh] md-w-[100vw] items-center md:mt-14 justify-between overflow-hidden">
                 <div className='h-[100%] md:w-[48%]  rounded-3xl overflow-hidden hidden md:flex'>
@@ -109,6 +109,7 @@ const About: React.FC = () => {
                     />
                 </div>
             </div>
+
         </div>
     )
 }

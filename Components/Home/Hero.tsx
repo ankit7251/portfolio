@@ -6,7 +6,7 @@ import { Fade } from 'react-awesome-reveal';
 const Hero: React.FC = () => {
 
     const [typeEffect] = useTypewriter({
-        words: ['FRONT END WEB DEVELOPER'],
+        words: ['FRONTEND WEB DEVELOPER'],
         delaySpeed: 3000,
         loop: true,
         deleteSpeed: 50,
@@ -14,11 +14,11 @@ const Hero: React.FC = () => {
     })
     return (
         <>
-            <div className=' text-baseGray md:h-[100vh] h-[50vh] flex items-center justify-center relative herobackground' id='home'>
+            <div className=' text-baseGray md:h-[94vh] h-[50vh] flex items-center justify-center relative herobackground' id='home'>
                 <div className='text-center '>
-                    <h1 className='md:text-[4.5vw] text-[7vw] font-bold text-baseColor'>ANKIT SINGH</h1>
+                    <h1 className='md:text-[4.5vw] text-[7vw] font-bold text-baseColor ankitName'>ANKIT SINGH</h1>
                     <Fade>
-                        <p className='md:text-[3.5vw] text-[6vw]  '>{typeEffect}</p>
+                        <p className='md:text-[3.5vw] text-[6vw]  ankitName2'>{typeEffect}</p>
                     </Fade>
 
                 </div>

@@ -7,7 +7,7 @@
   --foreground: #000000;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,8 +28,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(50%); /* Adjust the brightness here */
-  z-index: -1; /* Place the pseudo-element behind the content */
+  filter: brightness(50%);
+  z-index: -1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,3 +50,34 @@ body {
     text-wrap: balance;
   }
 }
+
+.backgroundImageSkills {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.backgroundImageSkills::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ankitName {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #40e0d0;
+  -webkit-text-stroke-width: 1px;
+  font-family: itelic;
+}
+
+.ankitName2 {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 1px;
+  font-family: itelic;
+}
+
