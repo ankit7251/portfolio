@@ -6,34 +6,19 @@ import Link from 'next/link';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import img from "../../Assets/images/cv.jpg"
+import img from "../../Assets/images/updatedCV.jpg"
+import WelcomeIntro from './WelcomeIntro';
 
 const Header: React.FC = () => {
-    const [scrollingDown, setScrollingDown] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [scroll, setScroll] = useState(false);
     const [showImage, setShowImage] = useState(false);
-
 
 
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
-            if (currentScrollY > scrollPosition) {
-                setScrollingDown(true);
-            } else {
-                setScrollingDown(false);
-            }
-
-            setScrollPosition(currentScrollY);
-
-            if (currentScrollY > 100) {
-                setScroll(true);
-            } else {
-                setScroll(false);
-            }
+            setScrollPosition(currentScrollY); // Only keep scroll position tracking
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -41,6 +26,7 @@ const Header: React.FC = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [scrollPosition]);
+
 
     // Smooth scroll to a position
     const smoothScrollTo = (targetPosition: number) => {
@@ -73,23 +59,15 @@ const Header: React.FC = () => {
 
 
 
-    if (showImage) {
-        document.documentElement.style.overflow = "hidden"; // Page scrollbar hide
-    } else {
-        document.documentElement.style.overflow = "auto"; // Page scrollbar show
-    }
 
 
-
-    /// --- Whatsapp Condition --- /// 
 
     const sendMessage = () => {
         const phoneNumber = "917251979740";
-        const message = encodeURIComponent("Hello!");
+        const message = encodeURIComponent("Hello Ankit...");
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
-
 
     /// --- instagram Condition --- ///
 
@@ -107,6 +85,7 @@ const Header: React.FC = () => {
 
     return (
         <>
+            <WelcomeIntro />
             <div
                 className={`flex items-center justify-between px-4 z-20 md:px-14 py-2 border-b-[0.1rem] border-baseGray w-[100%]`}
             >
@@ -125,10 +104,11 @@ const Header: React.FC = () => {
                                     onClick={(e) => {
                                         e.preventDefault();
                                         const target = document.querySelector(item.href);
-                                        if (target) {
+                                        if (target && target instanceof HTMLElement) {
                                             smoothScrollTo(target.offsetTop); // Smooth scroll to the section
                                         }
                                     }}
+
                                 >
                                     {item.name}
                                 </Link>
@@ -170,7 +150,7 @@ const Header: React.FC = () => {
 
             {
                 showImage ? (
-                    <div className='absolute top-0 left-0 w-[100%] h-[100vh] bg-[#000000] z-50 flex items-center justify-center'>
+                    <div className='fixed top-0 left-0 w-[100%] h-[100vh] bg-[#000000] z-50 flex items-center justify-center'>
                         <Image src={img} alt="img" className='w-[100%] h-[95%] object-contain' />
 
                         <span

@@ -1,40 +1,46 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 
 const MouseAnimation = () => {
-  const [trail, setTrail] = useState([]);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setTrail((prevTrail) => {
-        const newTrail = [...prevTrail, { x: e.clientX, y: e.clientY }];
-        return newTrail.slice(-10); // Keep only the last 10 positions
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    setTimeout(() => {
+      setIsFinished(true); // Animation will finish after 3 seconds
+    }, 3000); // You can adjust this time as needed
   }, []);
 
   return (
-    <div className="pointer-events-none fixed top-0 left-0 w-full h-full">
-      {trail.map((pos, index) => (
-        <div
-          key={index}
-          className="absolute rounded-full bg-blue-400/30"
+    <div
+      className={`w-full h-full fixed top-0 left-0 flex items-center justify-center bg-black z-50 transition-all duration-700 ${
+        isFinished ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+    >
+      <div className="relative text-center text-white">
+        <h1
+          className={`text-6xl md:text-8xl font-extrabold text-white animate__animated animate__fadeInUp animate__delay-1s ${
+            isFinished ? "animate__fadeOut" : ""
+          }`}
           style={{
-            left: `${pos.x}px`,
-            top: `${pos.y}px`,
-            width: "10px",
-            height: "10px",
-            transition: `transform 0.3s ease-out, opacity 0.3s ease-out`,
-            transform: `translate(-50%, -50%)`,
-            opacity: (index + 1) / trail.length, 
+            animation: "fadeInUp 1s ease-out, explode 1.5s forwards",
+          }}
+        >
+          Welcome to My Portfolio
+        </h1>
+        {/* Explosion Effect */}
+        <div
+          className={`absolute w-full h-full bg-white opacity-20 rounded-full animate__animated ${
+            isFinished ? "animate__zoomOut" : "animate__zoomIn"
+          }`}
+          style={{
+            animationDuration: "1.5s",
+            animationTimingFunction: "ease-out",
           }}
         />
-      ))}
+      </div>
     </div>
   );
 };
 
 export default MouseAnimation;
+

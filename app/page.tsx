@@ -8,8 +8,7 @@ import MouseAnimation from "@/Components/shared/MouseAnimation";
 export default function Home() {
   return (
     <>
-        <MouseAnimation />
-
+      <MouseAnimation />
       <Header />
       <Hero />
       <About />
